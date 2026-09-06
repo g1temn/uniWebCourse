@@ -1,0 +1,66 @@
+@use '../../../styles/variables' as vars;
+@use '../../../styles/mixins' as mixins;
+
+.card {
+  text-decoration: none;
+  background-color: vars.$color-white;
+  border-radius: 24px;
+  padding: 50px 30px;
+  width: calc(33.333% - 20px);
+  min-width: 280px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  @include mixins.flex(column, flex-start, center);
+  text-align: center;
+
+  &:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(vars.$color-orange-main, 0.15);
+    
+    .image {
+      transform: scale(1.1);
+    }
+  }
+
+  @include mixins.tablet {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 200px; 
+  @include mixins.flex(row, center, center);
+  margin-bottom: 15px;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 15px 20px rgba(vars.$color-orange-main, 0.2));
+}
+
+.placeholder {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(vars.$color-orange-light, 0.2);
+  border-radius: 20px;
+}
+
+.title {
+  font-family: vars.$font-body;
+  font-size: 1.8rem;
+  color: vars.$color-navy;
+  font-weight: 700;
+}
+
+.description {
+  font-family: vars.$font-body;
+  color: vars.$color-black; 
+  opacity: 0.75;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}

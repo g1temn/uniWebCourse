@@ -1,0 +1,23 @@
+{
+  "sectionTitle": "Технології 1-го семестру",
+  "technologies": [
+    {
+      "id": "figma",
+      "title": "Figma",
+      "description": "Проєктування інтерфейсів, створення прототипів та основи UI/UX дизайну.",
+      "articleUrl": "https://en.wikipedia.org/wiki/Figma"
+    },
+    {
+      "id": "html",
+      "title": "HTML5",
+      "description": "Семантична розмітка, правильна структура вебсторінок та доступність контенту.",
+      "articleUrl": "https://en.wikipedia.org/wiki/HTML"
+    },
+    {
+      "id": "css",
+      "title": "CSS3",
+      "description": "Стилізація, адаптивні сітки (Flexbox/Grid), селектори та анімації.",
+      "articleUrl": "https://en.wikipedia.org/wiki/CSS"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+@use "../../../styles/variables" as vars;
+@use "../../../styles/mixins" as mixins;
+
+.btn {
+  font-family: vars.$font-body;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mixins.mobile {
+    width: 100%;
+  }
+}
+
+.primary {
+  background-color: vars.$color-white;
+  color: vars.$color-orange-main;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    background-color: vars.$color-black;
+    color: vars.$color-white;
+  }
+}
+
+.secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: vars.$color-white;
+  border-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+
+  &:hover {
+    background-color: vars.$color-white;
+    color: vars.$color-orange-main;
+    transform: translateY(-4px);
+  }
+}

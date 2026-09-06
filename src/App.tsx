@@ -1,10 +1,7 @@
-function App() {
+import { Home } from "./pages/Home/Home";
 
-  return (
-    <>
-      hello
-    </>
-  )
+function App() {
+  return <Home />;
 }
 
-export default App
+export default App;

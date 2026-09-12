@@ -1,0 +1,33 @@
+{
+  "title": "Залишити ",
+  "titleHighlight": "відгук",
+  "subtitle": "про сайт курсу \"Вебтехнології та вебдизайн\"",
+  "nameLabel": "Ваше ім'я",
+  "namePlaceholder": "Введіть ваше ім'я",
+  "groupLabel": "Академічна група",
+  "groupPlaceholder": "Наприклад, 121-22-1",
+  "dateLabel": "Дата заповнення",
+  "topicLabel": "Який модуль запам'ятався найбільше?",
+  "topicOptions": [
+    "Оберіть тему...",
+    "Основи UI/UX та Figma",
+    "Семантична розмітка HTML5",
+    "Адаптивні сітки CSS3",
+    "Інтерактивність з JavaScript/React"
+  ],
+  "techLabel": "Які технології хочете застосовувати у бекенді/фронтенді?",
+  "techOptions": [
+    "React & TypeScript",
+    "Sass/SCSS",
+    "ASP.NET Core",
+    "Entity Framework Core"
+  ],
+  "ratingLabel": "Загальна оцінка курсу",
+  "ratingExcellent": "Відмінно",
+  "ratingGood": "Добре",
+  "ratingNeedsImprovement": "Потребує доопрацювання",
+  "feedbackLabel": "Ваш відгук та пропозиції",
+  "feedbackPlaceholder": "Що вам найбільше сподобалось, а що варто покращити?",
+  "subscribeLabel": "Бажаю отримувати додаткові матеріали на пошту",
+  "submitBtn": "Відправити анкету"
+}

@@ -1,0 +1,218 @@
+@use "../../styles/variables" as vars;
+@use "../../styles/mixins" as mixins;
+
+.feedback {
+  min-height: 100vh;
+  padding: 80px 20px;
+  @include mixins.flex(column, flex-start, center, 40px);
+  background: linear-gradient(
+    135deg,
+    vars.$color-orange-light 0%,
+    vars.$color-orange-main 50%,
+    vars.$color-orange-dark 100%
+  );
+}
+
+.container {
+  width: 100%;
+  max-width: 750px;
+  @include mixins.flex(column, center, stretch, 30px);
+}
+
+.header {
+  text-align: center;
+}
+
+.title {
+  font-family: vars.$font-heading;
+  color: vars.$color-white;
+  font-family: vars.$font-body;
+  font-size: 3.5rem;
+  margin: 0 0 10px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+
+  .highlight {
+    color: vars.$color-navy;
+    font-family: vars.$font-heading;
+  }
+
+  @include mixins.mobile {
+    font-size: 2.5rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: rgba(vars.$color-white, 0.9);
+  margin: 0;
+  border-bottom: 1px solid rgba(vars.$color-white, 0.3);
+  padding-bottom: 20px;
+}
+
+.card {
+  background-color: vars.$color-white;
+  border-radius: 24px;
+  padding: 45px;
+  box-shadow: 0 20px 40px rgba(vars.$color-navy, 0.15);
+
+  @include mixins.mobile {
+    padding: 25px;
+    border-radius: 16px;
+  }
+}
+
+.form {
+  @include mixins.flex(column, flex-start, stretch, 24px);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  @include mixins.mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formGroup {
+  @include mixins.flex(column, flex-start, stretch, 8px);
+
+  label {
+    font-weight: 500;
+    color: vars.$color-navy;
+    font-size: 1rem;
+  }
+}
+
+.selectInput {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  font-family: vars.$font-body;
+  font-size: 1rem;
+  color: vars.$color-black;
+  box-sizing: border-box;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    border-color: vars.$color-orange-main;
+    background-color: vars.$color-white;
+    box-shadow: 0 0 0 3px rgba(vars.$color-orange-main, 0.1);
+  }
+}
+
+.checkboxGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding-top: 5px;
+
+  @include mixins.mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.checkboxLabel,
+.toggleLabel {
+  @include mixins.flex(row, flex-start, center, 10px);
+  font-weight: 400;
+  cursor: pointer;
+  color: vars.$color-black;
+
+  input[type="checkbox"] {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    background-color: vars.$color-white;
+
+    &:checked {
+      background-color: vars.$color-orange-main;
+      border-color: vars.$color-orange-main;
+
+      &::after {
+        content: "✓";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: vars.$color-white;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.toggleLabel {
+  margin-top: 10px;
+  padding: 15px;
+  background-color: rgba(vars.$color-orange-main, 0.05);
+  border-radius: 12px;
+  border: 1px dashed rgba(vars.$color-orange-main, 0.3);
+}
+
+.radioGroupWrapper {
+  @include mixins.flex(column, flex-start, stretch, 8px);
+
+  .radioGroupLabel {
+    font-weight: 500;
+    color: vars.$color-navy;
+    font-size: 1rem;
+  }
+}
+
+.radioGroup {
+  @include mixins.flex(row, flex-start, center, 20px);
+  flex-wrap: wrap;
+  padding-top: 5px;
+
+  .radioLabel {
+    @include mixins.flex(row, flex-start, center, 8px);
+    font-weight: 400;
+    cursor: pointer;
+    color: vars.$color-black;
+
+    input[type="radio"] {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+      margin: 0;
+      cursor: pointer;
+      position: relative;
+      transition: border-color 0.2s ease;
+
+      &:checked {
+        border-color: vars.$color-navy;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 10px;
+          height: 10px;
+          background-color: vars.$color-navy;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+
+.formActions {
+  margin-top: 20px;
+  @include mixins.flex(row, center, center);
+}

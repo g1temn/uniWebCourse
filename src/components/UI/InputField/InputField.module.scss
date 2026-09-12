@@ -1,0 +1,43 @@
+@use "../../../styles/variables" as vars;
+@use "../../../styles/mixins" as mixins;
+
+.formGroup {
+  @include mixins.flex(column, flex-start, stretch, 8px);
+
+  label {
+    font-weight: 500;
+    color: vars.$color-navy;
+    font-size: 1rem;
+  }
+
+  .input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    font-family: vars.$font-body;
+    font-size: 1rem;
+    color: vars.$color-black;
+    box-sizing: border-box;
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+    background-color: #fafafa;
+
+    &:focus {
+      outline: none;
+      border-color: vars.$color-orange-main;
+      background-color: vars.$color-white;
+      box-shadow: 0 0 0 3px rgba(vars.$color-orange-main, 0.1);
+    }
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+
+  textarea.input {
+    resize: vertical;
+    min-height: 120px;
+  }
+}

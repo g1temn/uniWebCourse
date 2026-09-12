@@ -14,7 +14,7 @@ const iconMap: Record<string, string> = {
 
 export const Technologies = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="Technologies">
       <div className={styles.container}>
         <h2 className={styles.title}>{techContent.sectionTitle}</h2>
         

@@ -12,7 +12,7 @@ export const CourseFilesTable: React.FC = () => {
   const files: CourseFile[] = filesData as CourseFile[];
 
   return (
-    <section className={styles.tableSection}>
+    <section className={styles.tableSection} id="CourseFilesTable">
       <div className={styles.headerWrapper}>
         <h2 className={styles.title}>
           Матеріали <span>курсу</span>

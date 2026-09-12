@@ -24,8 +24,14 @@ export const Hero = () => {
           <p className={styles.description}>{heroContent.description}</p>
 
           <div className={styles.actions}>
-            <Button variant="primary">{heroContent.buttons.primary}</Button>
-            <Button variant="secondary">{heroContent.buttons.secondary}</Button>
+            <a href="#Technologies">
+              <Button variant="primary">{heroContent.buttons.primary}</Button>
+            </a>
+            <a href="#CourseFilesTable">
+              <Button variant="secondary">
+                {heroContent.buttons.secondary}
+              </Button>
+            </a>
           </div>
         </div>
 

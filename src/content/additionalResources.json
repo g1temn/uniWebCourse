@@ -1,0 +1,51 @@
+{
+  "pageTitleStart": "Додаткові",
+  "pageTitleHighlight": "Ресурси",
+  "instruction": "Натискайте на іконки технологій (HTML5, CSS3, Figma) та їхні маркери на мапі, щоб перемикати відповідні навчальні відео.",
+  "mapConfig": {
+    "name": "techMap",
+    "altText": "Карта додаткових ресурсів",
+    "baseSize": {
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "resources": [
+    {
+      "id": "html",
+      "title": "Основи HTML5",
+      "description": "Базовий курс зі створення структури веб-сторінок.",
+      "videoUrl": "https://www.youtube.com/embed/jfU3hZDqGTo",
+      "area": {
+        "shape": "circle",
+        "baseCoords": [257, 720, 220],
+        "alt": "HTML5 маркер",
+        "tooltip": "Перейти до HTML5"
+      }
+    },
+    {
+      "id": "css",
+      "title": "Стилізація з CSS3",
+      "description": "Вивчіть, як робити сторінки красивими та адаптивними.",
+      "videoUrl": "https://www.youtube.com/embed/m359znI_IQc?si=zHqrP0Fsnx9I7z5J",
+      "area": {
+        "shape": "circle",
+        "baseCoords": [660, 225, 100],
+        "alt": "CSS3 маркер",
+        "tooltip": "Перейти до CSS3"
+      }
+    },
+    {
+      "id": "figma",
+      "title": "Дизайн у Figma",
+      "description": "Створення макетів та робота з графікою.",
+      "videoUrl": "https://www.youtube.com/embed/mmdWF0F9V7I?si=0fF51xYY74MmotNn",
+      "area": {
+        "shape": "circle",
+        "baseCoords": [1680, 493, 200],
+        "alt": "Figma маркер",
+        "tooltip": "Перейти до Figma"
+      }
+    }
+  ]
+}

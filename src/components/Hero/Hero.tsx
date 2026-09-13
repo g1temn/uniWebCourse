@@ -2,6 +2,8 @@ import heroContent from "../../content/hero.json";
 import { Button } from "../UI/Button/Button";
 import styles from "./Hero.module.scss";
 import heroImage from "../../assets/images/hero.png";
+import { Link } from "react-router-dom";
+import routesNames from "../../content/routesNames.json";
 
 export const Hero = () => {
   return (
@@ -27,6 +29,11 @@ export const Hero = () => {
             <a href="#Technologies">
               <Button variant="primary">{heroContent.buttons.primary}</Button>
             </a>
+            <Link to={routesNames.additionalResources}>
+              <Button variant="primary">
+                {heroContent.buttons.additionalResources}
+              </Button>
+            </Link>
             <a href="#CourseFilesTable">
               <Button variant="secondary">
                 {heroContent.buttons.secondary}

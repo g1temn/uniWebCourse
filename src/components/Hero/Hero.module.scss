@@ -138,6 +138,7 @@
 }
 
 .actions {
+  flex-wrap: wrap;
   @include mixins.flex($justify: flex-start, $gap: 20px);
 
   @include mixins.tablet {

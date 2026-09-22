@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./MainLayout.module.scss";
+import Navbar from "../../components/Navbar/Navbar";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -7,8 +8,11 @@ interface MainLayoutProps {
 
 export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <div className={styles.layout}>
-      <main className={styles.main}>{children}</main>
-    </div>
+    <>
+      <Navbar />
+      <div className={styles.layout}>
+        <main className={styles.main}>{children}</main>
+      </div>
+    </>
   );
 };

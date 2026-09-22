@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { InputField } from "../UI/InputField/InputField";
-import { Button } from "../UI/Button/Button";
+import React, { useState, useRef } from "react";
 import styles from "./Feedback.module.scss";
 import text from "../../content/feedback.json";
 
 export const Feedback: React.FC = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+
   const [formData, setFormData] = useState({
     name: "",
     group: "",
@@ -57,33 +57,78 @@ export const Feedback: React.FC = () => {
         </header>
 
         <div className={styles.card}>
-          <form className={styles.form} onSubmit={handleSubmit}>
+          <form className={styles.form} onSubmit={handleSubmit} ref={formRef}>
             <div className={styles.row}>
-              <InputField
-                label={text.nameLabel}
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder={text.namePlaceholder}
-                required
-              />
-              <InputField
-                label={text.groupLabel}
-                name="group"
-                value={formData.group}
-                onChange={handleChange}
-                placeholder={text.groupPlaceholder}
-              />
+              <div className={styles.formGroup}>
+                <label>{text.nameLabel}</label>
+                <input
+                  type="text"
+                  name="name"
+                  className={styles.selectInput}
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder={text.namePlaceholder}
+                  required
+                  pattern="^[A-ZА-ЯІЇЄҐ][a-zа-яіїєґ]{0,49}$"
+                  onInvalid={(e) => {
+                    const target = e.target as HTMLInputElement;
+                    if (target.validity.valueMissing) {
+                      target.setCustomValidity(
+                        "Будь ласка, заповніть це поле.",
+                      );
+                    } else if (target.validity.patternMismatch) {
+                      target.setCustomValidity(
+                        "Ім'я повинно бути одним словом, починатися з великої літери та містити максимум 50 символів.",
+                      );
+                    }
+                  }}
+                  onInput={(e) =>
+                    (e.target as HTMLInputElement).setCustomValidity("")
+                  }
+                />
+              </div>
+
+              <div className={styles.formGroup}>
+                <label>{text.groupLabel}</label>
+                <input
+                  type="text"
+                  name="group"
+                  className={styles.selectInput}
+                  value={formData.group}
+                  onChange={handleChange}
+                  placeholder={text.groupPlaceholder}
+                  required
+                  pattern="^[A-Za-zА-Яа-яІіЇїЄєҐґ]{2}-\d{2}-\d$"
+                  onInvalid={(e) => {
+                    const target = e.target as HTMLInputElement;
+                    if (target.validity.valueMissing) {
+                      target.setCustomValidity(
+                        "Будь ласка, заповніть це поле.",
+                      );
+                    } else if (target.validity.patternMismatch) {
+                      target.setCustomValidity(
+                        "Формат групи має бути: ББ-ЦЦ-Ц (наприклад: АБ-12-3).",
+                      );
+                    }
+                  }}
+                  onInput={(e) =>
+                    (e.target as HTMLInputElement).setCustomValidity("")
+                  }
+                />
+              </div>
             </div>
 
-            <InputField
-              label={text.dateLabel}
-              name="date"
-              type="date"
-              value={formData.date}
-              onChange={handleChange}
-              required
-            />
+            <div className={styles.formGroup}>
+              <label>{text.dateLabel}</label>
+              <input
+                type="date"
+                name="date"
+                className={styles.selectInput}
+                value={formData.date}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
             <div className={styles.formGroup}>
               <label>{text.topicLabel}</label>
@@ -148,16 +193,20 @@ export const Feedback: React.FC = () => {
               </div>
             </div>
 
-            <InputField
-              label={text.feedbackLabel}
-              name="feedback"
-              value={formData.feedback}
-              onChange={handleChange}
-              placeholder={text.feedbackPlaceholder}
-              isTextArea
-              rows={4}
-              required
-            />
+            <div className={styles.formGroup}>
+              <label>{text.feedbackLabel}</label>
+              <textarea
+                name="feedback"
+                className={styles.selectInput}
+                value={formData.feedback}
+                onChange={handleChange}
+                placeholder={text.feedbackPlaceholder}
+                rows={4}
+                required
+                maxLength={400}
+                title="Повідомлення не може перевищувати 400 символів"
+              />
+            </div>
 
             <label className={styles.toggleLabel}>
               <input
@@ -170,9 +219,17 @@ export const Feedback: React.FC = () => {
             </label>
 
             <div className={styles.formActions}>
-              <Button type="submit" variant="primary">
+              <button
+                type="submit"
+                className={styles.submitBtn}
+                onClick={() => {
+                  if (formRef.current) {
+                    formRef.current.reportValidity();
+                  }
+                }}
+              >
                 {text.submitBtn}
-              </Button>
+              </button>
             </div>
           </form>
         </div>

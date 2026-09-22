@@ -216,3 +216,22 @@
   margin-top: 20px;
   @include mixins.flex(row, center, center);
 }
+
+.submitBtn {
+  padding: 14px 36px;
+  background-color: vars.$color-orange-main;
+  color: vars.$color-white;
+  border: none;
+  border-radius: 30px;
+  font-family: vars.$font-body;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(vars.$color-orange-dark, 0.15);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(vars.$color-orange-dark, 0.25);
+  }
+}

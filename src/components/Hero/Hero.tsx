@@ -34,6 +34,11 @@ export const Hero = () => {
                 {heroContent.buttons.additionalResources}
               </Button>
             </Link>
+            <Link to={routesNames.professors}>
+              <Button variant="primary">
+                {heroContent.buttons.professors}
+              </Button>
+            </Link>
             <a href="#CourseFilesTable">
               <Button variant="secondary">
                 {heroContent.buttons.secondary}

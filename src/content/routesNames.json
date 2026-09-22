@@ -1,4 +1,5 @@
 {
     "home": "/",
-    "additionalResources": "/additional-resources"
+    "additionalResources": "/additional-resources",
+    "professors": "/professors"
 }

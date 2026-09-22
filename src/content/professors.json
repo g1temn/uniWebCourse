@@ -1,0 +1,19 @@
+{
+    "sectionTitle": "Викладачі курсу",
+    "professors": [
+        {
+            "id": 1,
+            "name": "Ширін А. Л.",
+            "title": "Доцент кафедри ПЗКС, к.т.н.",
+            "role": "Лекції",
+            "image": "src/assets/images/profex.png"
+        },
+        {
+            "id": 2,
+            "name": "Спірінцев В. В.",
+            "title": "Асистент кафедри ПЗКС",
+            "role": "Практичні заняття",
+            "image": "src/assets/images/profex.png"
+        }
+    ]
+}

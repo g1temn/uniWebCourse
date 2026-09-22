@@ -4,7 +4,7 @@ import { Technologies } from "../../components/Technologies/Technologies";
 import { CourseFilesTable } from "../../components/CourseFilesTable/CourseFilesTable";
 import { Feedback } from "../../components/Feedback/Feedback";
 
-export const Home = () => {
+export const HomePage = () => {
   return (
     <MainLayout>
       <Hero />

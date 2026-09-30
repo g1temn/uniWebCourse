@@ -1,0 +1,138 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.section {
+  @include flex(column, center, center, 28px);
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+  font-family: $font-body;
+  color: $color-black;
+}
+
+.header {
+  @include flex(column, center, center, 12px);
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid $color-black;
+  padding-bottom: 18px;
+}
+
+.title {
+  font-family: $font-heading;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+
+  @include tablet {
+    font-size: 40px;
+  }
+
+  @include mobile {
+    font-size: 34px;
+  }
+
+  @include smallMobile {
+    font-size: 28px;
+  }
+}
+
+.titleNavy {
+  color: $color-navy;
+}
+
+.titleOrange {
+  color: $color-orange-main;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 16px;
+  color: $color-black;
+
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+.listBlock {
+  width: 100%;
+  background-color: $color-white;
+  border-top: 12px solid $color-orange-main;
+  border-bottom: 2px solid $color-light-gray;
+}
+
+.questionsList {
+  list-style-type: square;
+  list-style-position: inside;
+  list-style-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'><rect width='18' height='18' rx='2' fill='%23ff5a00'/><text x='9' y='13.5' text-anchor='middle' font-family='Ubuntu, sans-serif' font-size='12' font-weight='bold' fill='%23ffffff'>?</text></svg>");
+  margin: 0;
+  padding: 0;
+  @include flex(column, flex-start, stretch, 3px);
+  background-color: $color-white;
+}
+
+.questionItem {
+  background-color: $color-light-gray;
+  padding: 20px 28px 20px 50px;
+  border-left: 4px solid transparent;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+
+  &:hover {
+    background-color: #efefef;
+    border-left-color: $color-orange-main;
+  }
+
+  @include mobile {
+    padding: 16px 16px 16px 24px;
+  }
+}
+
+.questionText {
+  display: inline-flex;
+  width: calc(100% - 34px);
+  margin-left: 12px;
+  position: relative;
+  top: -3px;
+  font-weight: 700;
+  color: $color-orange-dark;
+  line-height: 1.45;
+
+  @include mobile {
+    font-size: 15px;
+  }
+}
+
+.answersList {
+  list-style-type: disc;
+  list-style-position: inside;
+  list-style-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'><rect width='18' height='18' rx='2' fill='%23183a5a'/><path d='M4.5 9.2l3 3 6-6.5' stroke='%23ffffff' stroke-width='2.2' fill='none' stroke-linecap='square'/></svg>");
+  margin: 10px 0 0 0;
+  padding: 14px 0 0 0;
+  border-top: 2px solid $color-white;
+}
+
+.answerItem {
+  margin: 0;
+  padding: 0;
+}
+
+.answerText {
+  display: inline-flex;
+  width: calc(100% - 34px);
+  margin-left: 12px;
+  position: relative;
+  top: -3px;
+  font-size: 15px;
+  font-weight: 400;
+  color: $color-black;
+  line-height: 1.55;
+
+  @include mobile {
+    font-size: 14px;
+  }
+}

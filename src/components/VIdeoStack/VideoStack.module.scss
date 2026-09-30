@@ -30,6 +30,7 @@
 
   @include mobile {
     font-size: 34px;
+
   }
 
   @include smallMobile {
@@ -71,6 +72,9 @@
 
 .quickTabs {
   @include flex(row, center, center, 12px);
+  @include mobile {
+    display: none;
+  }
   flex-wrap: wrap;
 }
 

@@ -1,0 +1,409 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.section {
+  @include flex(column, center, center, 32px);
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+  font-family: $font-body;
+  color: $color-black;
+}
+
+.header {
+  @include flex(column, center, center, 20px);
+  text-align: center;
+  width: 100%;
+}
+
+.title {
+  font-family: $font-heading;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+
+  @include tablet {
+    font-size: 40px;
+  }
+
+  @include mobile {
+    font-size: 34px;
+  }
+
+  @include smallMobile {
+    font-size: 28px;
+  }
+}
+
+.titleNavy {
+  color: $color-navy;
+}
+
+.titleOrange {
+  color: $color-orange-main;
+}
+
+.hintBanner {
+  background-color: $color-white;
+  border-left: 5px solid $color-orange-main;
+  border-radius: 12px;
+  padding: 16px 28px;
+  max-width: 680px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+
+  p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: $color-black;
+  }
+
+  @include mobile {
+    padding: 12px 18px;
+
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+.quickTabs {
+  @include flex(row, center, center, 12px);
+  flex-wrap: wrap;
+}
+
+.tabBtn {
+  font-family: $font-body;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 2px solid $color-navy;
+  background-color: $color-white;
+  color: $color-navy;
+  cursor: pointer;
+  transition: 0.3s all;
+
+  &:hover {
+    background-color: $color-orange-light;
+    border-color: $color-orange-light;
+    color: $color-white;
+  }
+}
+
+.tabBtnActive {
+  background-color: $color-orange-main;
+  border-color: $color-orange-main;
+  color: $color-white;
+}
+
+.absoluteContainer {
+  position: relative;
+  width: 100%;
+  max-width: 780px;
+  height: 540px;
+  margin: 10px auto 30px;
+
+  @include tablet {
+    max-width: 640px;
+    height: 520px;
+  }
+
+  @include mobile {
+    @include flex(column, center, center, 24px);
+    height: auto;
+    margin-bottom: 10px;
+  }
+}
+
+.box {
+  width: 480px;
+  position: absolute;
+  @include flex(column, space-between, stretch, 0);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 10px 12px 0 rgba(24, 58, 90, 0.22);
+  transition: 0.3s all ease;
+  cursor: pointer;
+
+  &:hover {
+    z-index: 100 !important;
+    transform: scale(1.04) translateY(-4px);
+    box-shadow: 14px 18px 0 rgba(24, 58, 90, 0.35);
+  }
+
+  @include tablet {
+    width: 420px;
+  }
+
+  @include mobile {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100%;
+    max-width: 460px;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+}
+
+.activeWindow {
+  z-index: 80 !important;
+  box-shadow: 12px 14px 0 rgba(255, 90, 0, 0.35);
+}
+
+.box1 {
+  top: 10px;
+  left: 20px;
+  z-index: 10;
+  background-color: $color-light-gray;
+  border-top: 4px solid $color-black;
+  border-right: 4px dashed $color-black;
+  border-bottom: 4px dotted $color-black;
+  border-left: 4px double $color-black;
+}
+
+.box2 {
+  top: 65px;
+  left: 140px;
+  z-index: 20;
+  background-image: linear-gradient(
+    45deg,
+    $color-white,
+    $color-light-gray,
+    rgba(255, 133, 51, 0.18)
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid $color-navy;
+
+  @include tablet {
+    left: 100px;
+  }
+}
+
+.box3 {
+  top: 120px;
+  left: 260px;
+  z-index: 30;
+  background-color: $color-white;
+  border: 2px solid $color-orange-main;
+
+  @include tablet {
+    left: 180px;
+  }
+}
+
+.windowBar {
+  @include flex(row, space-between, center, 10px);
+  background-color: $color-navy;
+  color: $color-white;
+  padding: 8px 14px;
+  border-bottom: 2px solid $color-black;
+}
+
+.windowDots {
+  @include flex(row, flex-start, center, 6px);
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dotRed {
+  background-color: $color-orange-main;
+}
+
+.dotYellow {
+  background-color: $color-orange-light;
+}
+
+.dotGreen {
+  background-color: #35c759;
+}
+
+.windowPath {
+  font-family: monospace;
+  font-size: 12px;
+  color: $color-light-gray;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 240px;
+
+  @include smallMobile {
+    max-width: 140px;
+  }
+}
+
+.techBadge {
+  background-color: $color-orange-main;
+  color: $color-white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.previewWrapper {
+  position: relative;
+  width: 100%;
+  height: 195px;
+  background-color: $color-black;
+  overflow: hidden;
+
+  @include smallMobile {
+    height: 165px;
+  }
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+
+  .box:hover & {
+    transform: scale(1.05);
+  }
+}
+
+.previewOverlay {
+  position: absolute;
+  inset: 0;
+  @include flex(row, space-between, flex-end, 10px);
+  padding: 12px;
+  background: linear-gradient(
+    to top,
+    rgba(18, 18, 18, 0.8) 0%,
+    rgba(18, 18, 18, 0.15) 60%,
+    transparent 100%
+  );
+}
+
+.playButton {
+  background-color: $color-orange-main;
+  color: $color-white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: $color-orange-dark;
+  }
+}
+
+.durationBadge {
+  background-color: rgba(18, 18, 18, 0.85);
+  color: $color-white;
+  font-family: monospace;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid $color-orange-light;
+}
+
+.windowContent {
+  @include flex(column, flex-start, flex-start, 10px);
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.92);
+}
+
+.courseHeader {
+  @include flex(column, flex-start, flex-start, 4px);
+}
+
+.courseTitle {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: $color-navy;
+}
+
+.courseAuthor {
+  font-size: 12px;
+  color: $color-orange-dark;
+  font-weight: 500;
+}
+
+.courseDescription {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: $color-black;
+}
+
+.actions {
+  @include flex(row, flex-start, center, 12px);
+  width: 100%;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.primaryLink {
+  background-color: $color-orange-main;
+  color: $color-white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: 0.2s background-color ease;
+
+  &:hover {
+    background-color: $color-orange-dark;
+  }
+}
+
+.secondaryLink {
+  color: $color-navy;
+  text-decoration: underline;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s color ease;
+
+  &:hover {
+    color: $color-orange-main;
+  }
+}
+
+.statusBar {
+  @include flex(row, space-between, center, 8px);
+  background-color: $color-light-gray;
+  border-top: 1px solid rgba(18, 18, 18, 0.15);
+  padding: 5px 14px;
+  font-family: monospace;
+  font-size: 11px;
+  color: $color-navy;
+}
+
+.modernRounded {
+  @include flex(row, center, center, 10px);
+  background-color: $color-orange-main;
+  color: $color-white;
+  font-family: $font-body;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 18px 30px;
+  width: fit-content;
+  border-radius: 15px;
+  border-bottom: 4px solid $color-orange-main;
+  box-shadow: 0 8px 20px rgba(24, 58, 90, 0.18);
+  text-align: center;
+
+  @include mobile {
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+}

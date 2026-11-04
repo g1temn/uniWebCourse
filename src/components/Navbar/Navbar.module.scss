@@ -11,7 +11,17 @@
   background-color: transparent;
   backdrop-filter: blur(30px);
   z-index: 1000;
-  @include mixins.flex();
+  @include mixins.flex(row, space-between, center);
+  padding: 0 40px;
+  box-sizing: border-box;
+
+  @include mixins.tablet {
+    padding: 0 25px;
+  }
+
+  @include mixins.mobile {
+    padding: 0 15px;
+  }
 
   ul {
     @include mixins.flex(row, center, center, 40px);
@@ -53,5 +63,35 @@
     @include mixins.smallMobile {
       font-size: 14px;
     }
+  }
+
+  .logoLink {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 0;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.logo {
+  display: block;
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s ease;
+
+  .logoLink:hover & {
+    transform: scale(1.05);
+  }
+
+  @include mixins.mobile {
+    height: 40px;
+  }
+
+  @include mixins.smallMobile {
+    height: 34px;
   }
 }
